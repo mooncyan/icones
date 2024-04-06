@@ -1,6 +1,6 @@
 <!-- eslint-disable no-console -->
 <script setup lang='ts'>
-import { activeMode, bags, drawerCollapsed, getSearchResults, iconSize, isCurrentCollectionLoading, listType, showHelp, toggleBag } from '../store'
+import { activeMode, bags, drawerCollapsed, getSearchResults, isCurrentCollectionLoading, listType, showHelp, toggleBag } from '../store'
 import { isLocalMode } from '../env'
 import { cacheCollection, specialTabs } from '../data'
 import { getIconSnippet } from '../utils/icons'
@@ -70,7 +70,7 @@ async function onSelect(icon: string) {
       toggleBag(icon)
       break
     case 'copy':
-      onCopy(await copyText(await getIconSnippet(icon, 'id', true) || icon))
+      onCopy(await copyText(await getIconSnippet(icon, 'svg', true) || icon))
       break
     default:
       current.value = icon
@@ -279,11 +279,12 @@ useEventListener(categoriesContainer, 'wheel', (e: WheelEvent) => {
             <Icons
               :icons="icons.slice(0, max)"
               :selected="bags"
-              :class="iconSize"
+              class="text-4xl"
               :display="listType"
               :search="search"
               :namespace="namespace"
               @select="onSelect"
+              @copy="onCopy"
             />
             <button v-if="icons.length > max" class="btn mx-1 my-3" @click="loadMore">
               Load More
@@ -334,14 +335,12 @@ useEventListener(categoriesContainer, 'wheel', (e: WheelEvent) => {
         </ModalDialog>
 
         <!-- Mode -->
-        <div
+        <!-- <div
           class="fixed top-0 right-0 pl-4 pr-2 py-1 rounded-l-full bg-primary text-white shadow mt-16 cursor-pointer transition-transform duration-300 ease-in-out"
           :style="activeMode !== 'normal' ? {} : { transform: 'translateX(120%)' }"
-          @click="activeMode = 'normal'"
         >
-          {{ activeMode === 'select' ? 'Multiple select' : 'Name copying mode' }}
-          <Icon icon="carbon:close" class="inline-block text-xl align-text-bottom" />
-        </div>
+          {{ activeMode === 'select' ? 'Multiple select' : 'Click to copy SVG' }}
+        </div> -->
 
         <SearchElectron />
 

@@ -14,6 +14,7 @@ import fg from 'fast-glob'
 import electron from 'vite-plugin-electron'
 import renderer from 'vite-plugin-electron-renderer'
 import esmodule from 'vite-plugin-esmodule'
+import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 
 export default defineConfig(({ mode }) => {
   const isElectron = mode === 'electron'
@@ -96,6 +97,7 @@ export default defineConfig(({ mode }) => {
         },
       }),
       UnoCSS(),
+      VueI18nPlugin({ /* options */ }),
     ],
     define: {
       __BUILD_TIME__: JSON.stringify(dayjs().format('YYYY/MM/DD HH:mm')),

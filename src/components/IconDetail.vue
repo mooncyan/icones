@@ -152,7 +152,7 @@ const collection = computed(() => {
       </p>
 
       <div>
-        <button
+        <!-- <button
           class="
             inline-block leading-1em border border-base my-2 mr-2 font-sans pl-2 pr-3 py-1 rounded-full text-sm cursor-pointer
             hover:bg-gray-50 dark:hover:bg-dark-200
@@ -168,8 +168,8 @@ const collection = computed(() => {
             <Icon class="inline-block text-lg align-middle" icon="carbon:add" />
             <span class="inline-block align-middle ml1">add to bag</span>
           </template>
-        </button>
-
+        </button> -->
+        <!--
         <button
           v-if="inBag(icon)"
           class="
@@ -181,24 +181,22 @@ const collection = computed(() => {
         >
           <Icon class="inline-block text-lg align-middle" icon="carbon:list-checked" />
           <span class="inline-block align-middle ml1">multiple select</span>
-        </button>
+        </button> -->
 
         <button
           class="
             inline-block leading-1em border border-base my-2 mr-2 font-sans pl-2 pr-3 py-1 rounded-full text-sm cursor-pointer
             hover:bg-gray-50 dark:hover:bg-dark-200
           "
-          :class="copyPreviewColor ? 'text-primary' : 'text-gray-500'"
-          @click="copyPreviewColor = !copyPreviewColor"
+          @click="copy('svg')"
         >
-          <Icon v-if="!copyPreviewColor" class="inline-block text-lg align-middle" icon="carbon:checkbox" />
-          <Icon v-else class="inline-block text-lg align-middle" icon="carbon:checkbox-checked" />
-          <span class="inline-block align-middle ml1">copy with color</span>
+          <Icon class="inline-block text-lg align-middle" icon="uil:clipboard-blank" />
+          <span class="inline-block align-middle ml1">copy SVG</span>
         </button>
       </div>
 
       <div class="flex flex-wrap mt-2">
-        <div class="mr-4">
+        <!-- <div class="mr-4">
           <div class="my-1 text-gray-500 text-sm">
             Snippets
           </div>
@@ -214,8 +212,8 @@ const collection = computed(() => {
           <button class="btn small mr-1 mb-1 opacity-75" @click="copy('pure-jsx')">
             JSX
           </button>
-        </div>
-        <div class="mr-4">
+        </div> -->
+        <!-- <div class="mr-4">
           <div class="my-1 text-gray-500 text-sm">
             Components
           </div>
@@ -286,8 +284,8 @@ const collection = computed(() => {
           <button class="btn small mr-1 mb-1 opacity-75" @click="download('astro')">
             Astro
           </button>
-        </div>
-        <div class="mr-4">
+        </div> -->
+        <!-- <div class="mr-4">
           <div class="my-1 text-gray-500 text-sm">
             View on
           </div>
@@ -307,7 +305,7 @@ const collection = computed(() => {
           >
             UnoCSS
           </a>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

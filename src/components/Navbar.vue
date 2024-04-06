@@ -47,9 +47,9 @@ export default defineComponent({
       <div flex-auto />
       <h1
         absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center
-        text-xl font-light tracking-2px pointer-events-none
+        text-xl font-light tracking-0px pointer-events-none
       >
-        Icônes
+        Icônes&nbsp;<span opacity-30>for</span><span font-bold>&nbsp;THORN</span>
       </h1>
       <a
         class="non-dragging"

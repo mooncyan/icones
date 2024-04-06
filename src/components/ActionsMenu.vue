@@ -164,6 +164,11 @@ const favorited = computed(() => isFavoritedCollection(props.collection.id))
 
 <template>
   <div flex="~ gap3" text-xl items-center>
+    <div flex items-center gap-1 select-none text-13px text-green-6 bg-green-6 bg-opacity-10 px-3 py-1 rounded-full>
+      <div i-iconamoon:information-circle-duotone text="16px" />
+      Click to copy SVG
+    </div>
+
     <DarkSwitcher />
 
     <RouterLink
@@ -190,7 +195,7 @@ const favorited = computed(() => isFavoritedCollection(props.collection.id))
     />
 
     <!-- Menu -->
-    <div icon-button cursor-pointer relative i-carbon-menu title="Menu">
+    <!-- <div icon-button cursor-pointer relative i-carbon-menu title="Menu">
       <select
         v-model="menu"
         absolute w-full dark:bg-dark-100 text-base top-0 right-0 opacity-0 z-10
@@ -215,11 +220,6 @@ const favorited = computed(() => isFavoritedCollection(props.collection.id))
           </option>
         </optgroup>
 
-        <!--
-            TODO: due to this function requires to download and pack
-                  the full set, we should make some UI to aware users
-                  in browser version.
-          -->
         <optgroup v-if="collection.id !== 'all'" label="Downloads">
           <option v-if="!isElectron && !installed" value="cache">
             Cache in Browser
@@ -235,7 +235,7 @@ const favorited = computed(() => isFavoritedCollection(props.collection.id))
           </option>
         </optgroup>
       </select>
-    </div>
+    </div> -->
     <!-- TODO: improve design of custom select -->
     <!-- <CustomSelect v-model="menu" :options="options">
       <div icon-button cursor-pointer relative i-carbon-menu title="Menu" />

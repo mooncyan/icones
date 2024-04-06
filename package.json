@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@antfu/utils": "^0.7.7",
+    "@intlify/unplugin-vue-i18n": "^4.0.0",
     "@vueuse/core": "^10.9.0",
     "dexie": "^3.2.5",
     "file-saver": "^2.0.5",
@@ -37,6 +38,7 @@
     "prettier": "^3.2.5",
     "vue": "^3.4.21",
     "vue-chemistry": "^0.2.2",
+    "vue-i18n": "^9.11.0",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
